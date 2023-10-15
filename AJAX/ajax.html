@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv=Content-Type content="text/html; charset=utf-8">
+    <meta name="author" content="Nguyen Thinh Thuan 21020410">
+	<title>AJAX</title>
+</head>
+<body>
+	<p>Cho trang  <a href="abc.htm">abc.htm</a></p>
+	<button id="btn1">Tải abc.htm</button>
+	<div id="div1">Nội dung này sẽ  được thay thế.</div>
+
+	<script type="text/javascript" src="ajax.js"></script>
+	<script type="text/javascript">
+		document.getElementById("btn1").onclick = function() {
+			this.disabled = true;
+			var xmlhttp = getXmlHttpObject();
+			xmlhttp.onreadystatechange = function() {
+				if (this.readyState == 4) document.getElementById("div1").innerHTML = this.responseText;
+			};
+			xmlhttp.open("GET", "abc.htm", true);
+			xmlhttp.send(null);
+		};
+	</script>
+</body>
+</html>
