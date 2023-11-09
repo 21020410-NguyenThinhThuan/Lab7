@@ -5,7 +5,7 @@ function getXmlHttpObject()  {
       try  { xmlhttp = new ActiveXObject("Msxml2.XMLHTTP"); } 
           catch (e) {
           try { xmlhttp = new ActiveXObject("Microsoft.XMLHTTP"); }
-          catch (e)  { console.log("TrĂ¬nh duyá»‡t khĂ´ng há»— trá»£ AJAX!"); }
+          catch (e)  { console.log("AJAX!"); }
       }
   }
   return xmlhttp;
